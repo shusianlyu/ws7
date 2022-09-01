@@ -1,0 +1,22 @@
+    1  mkdir ws2
+    2  cd ws2
+    3  wget    https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+    4  gunzip amazon_reviews_us_Books_v1_02.tsv.gz
+    5  grep $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > verified.txt
+    6  grep -v $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > unverified.txt
+    7  wc verified.txt > counts.txt
+    8  wc unverified.txt >> counts.txt
+    9  cat counts.txt
+   10  cut counts.txt -f7
+   11  cut counts.txt ' ' -f7
+   12  cut counts.txt -d ' ' -f7
+   13  cut counts.txt -d ' ' -f7 --complement
+   14  cut counts.txt -d ' ' -f7 --complement > counts2.txt
+   15  cat counts2.txt
+   16  mv counts2.txt wcoutput.txt
+   17  mv counts.txt wcoutput1.txt
+   18  mv wcoutput.txt counts.txt
+   19  cat counts.txt
+   20  vi counts.txt
+   21  cat counts.txt
+   22  history > cmds.log
