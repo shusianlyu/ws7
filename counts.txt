@@ -1,0 +1,3 @@
+number of lines  number of words  number of bytes  result's file name   
+    229347          44403448         262431531        verified.txt
+    2876174         505766319        2976270999       unverified.txt
