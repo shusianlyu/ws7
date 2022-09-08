@@ -1,3 +1,0 @@
-number of lines  number of words  result's file name
-    229347 	     44403448         verified.txt
-    2876174          505766319        unverified.txt
