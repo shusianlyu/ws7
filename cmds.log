@@ -1,6 +1,0 @@
-awk '{print $2}' amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c > customer_id.txt
-awk '{print $1, $2}' customer_id.txt | sort -g | tail -n 3
-awk '{print $4}' amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c > product_id.txt
-awk '{print $1, $2}' product_id.txt | sort -g | tail -n 3
-awk 'BEGIN { FS = "\t" } ; { print $9 }' amazon_reviews_us_Books_v1_02.tsv > helpfulness.txt
-sort -g helpfulness.txt | uniq -c
