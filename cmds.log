@@ -1,19 +1,2 @@
-  264  mkdir CUSTOMERS
-  265  mkdir PRODUCTS
-  266  fgrep -h "51325095" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > CUSTOMERS/51325095.txt
-  267  fgrep -h "49202417" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > CUSTOMERS/49202417.txt
-  268  fgrep -h "52496677" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > CUSTOMERS/52496677.txt
-  269  fgrep -h "0812548051" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > PRODUCTS/0812548051.txt
-  270  fgrep -h "0399501487" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > PRODUCTS/0399501487.txt
-  271  fgrep -h "0060761288" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $9 }' > PRODUCTS/0060761288.txt
-  272  head -n 5 CUSTOMERS/51325095.txt
-  273  count=0; total=0; for i in $( awk '{ print $1; }' CUSTOMERS/51325095.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  274  head -n 10 CUSTOMERS/51325095.txt
-  275  tail -n 10 CUSTOMERS/51325095.txt
-  276  count=0; total=0; for i in $( awk '{ print $1; }' CUSTOMERS/49202417.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  277  count=0; total=0; for i in $( awk '{ print $1; }' CUSTOMERS/52496677.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  278  count=0; total=0; for i in $( awk '{ print $1; }' PRODUCTS/0812548051.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  279  count=0; total=0; for i in $( awk '{ print $1; }' PRODUCTS/0399501487.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  280  count=0; total=0; for i in $( awk '{ print $1; }' PRODUCTS/0060761288.txt ); do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total/ $count" | bc
-  281  history
-  282  history > cmds.log
+awk 'BEGIN { FS = "\t" } ; { print $2 }' amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -g | awk '{print $2}' | tail -n 1000 > top_1000.txt
+while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$line.txt; done < top_1000.txt

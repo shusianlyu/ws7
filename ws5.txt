@@ -1,0 +1,6 @@
+Script started on 2022-10-11 11:50:40-04:00
+]0;jessie@sjsu:~[jessie@sjsu ~]$ awk 'BEGIN { FS = "\t" } ; { print $2 }' amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -g | awk '{print $2}' | tail -n 1000 > top_1000.txt
+]0;jessie@sjsu:~[jessie@sjsu ~]$ while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$line.txt; done < top_1000.txt
+]0;jessie@sjsu:~[jessie@sjsu ~]$ exit
+
+Script done on 2022-10-11 12:17:26-04:00
