@@ -1,0 +1,22 @@
+ws7.txt
+Script started on 2022-10-25 00:32:34-04:00
+bash-4.4$ fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $$2 }' [1P[1@1[1@4
+Good import CDs for businessman's. <br />2 CD w.  <br />1 - English Russian English Translator  <br />2 - Pop-Up dictionary Polyglossum II with 5 English Russian and Russian English dictionary-data bases and over 500 000 terms
+Is very useful in activity. Saves a lot of time. Thank.
+The double CD with MT PARS with Bisiness-dictionaries set and Polyglossum-Business-dictionaries set is good PRODUCT for businesmann and for stjudent. RECOMMEND!
+It on my supervisings the largest and modern selection of the E-R-E dictionaries on business : economy, jurisprudence, business correspondence etc. It is very convenient, that in a complete set of delivery is present CD with  the program computer-translator and CD with the electronic dictionaries Polyglossum
+THE BEST ENGLISH RUSSIAN DICTIONARIES !!!!!!<BR>Excellent product! <BR>Qualitative translation. <BR>Huge quantity of the words in the dictionaries! <BR>Very - Very - Very RECOMMEND! <BR>Well works in our internal corporate network! <BR>Constant updating from the publisher till the Internet...
+bash-4.4$ fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $$14 }' > [K[K| sed -e 's/<[^>]*>//g;s/and//g;s/://g;s/\.//g;s/,//g'
+Good import CDs for businessman's 2 CD w  1 - English Russian English Translator  2 - Pop-Up dictionary Polyglossum II with 5 English Russian  Russian English dictionary-data bases  over 500 000 terms
+Is very useful in activity Saves a lot of time Thank
+The double CD with MT PARS with Bisiness-dictionaries set  Polyglossum-Business-dictionaries set is good PRODUCT for businesmann  for stjudent RECOMMEND!
+It on my supervisings the largest  modern selection of the E-R-E dictionaries on business  economy jurisprudence business correspondence etc It is very convenient that in a complete set of delivery is present CD with  the program computer-translator  CD with the electronic dictionaries Polyglossum
+THE BEST ENGLISH RUSSIAN DICTIONARIES !!!!!!Excellent product! Qualitative translation Huge quantity of the words in the dictionaries! Very - Very - Very RECOMMEND! Well works in our internal corporate network! Constant updating from the publisher till the Internet
+bash-4.4$ fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $$14 }' | sed -e 's/<[^>]*>//g;s/and//g;s/://g;s/\.//g;s/,//g' > modifies [K[Kd_review_vo[K[Kbody_5864550728.txt
+bash-4.4$ ls
+amazon_reviews_us_Books_v1_02.tsv	     gnuplot-5.4.5
+downloaded_tweets_extend_nolf2.tsv	     modified_review_body_5864550728.txt
+downloaded_tweets_extend_original_nolf2.tsv  ws7.txt
+bash-4.4$ hi[K[Kexit
+
+Script done on 2022-10-25 00:34:36-04:00

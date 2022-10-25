@@ -1,22 +1,4 @@
-mkdir PRODUCTS
-fgrep "0312864590" amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0312864590.txt
-DATETIME=$(date +%Y%m%d_%H%M%S )
-cp ~/PRODUCTS/0312864590.txt ~/PRODUCTS/0312864590.$DATETIME.txt
-cd PRODUCTS
+fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $14 }' 
+fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $14 }' | sed -e 's/<[^>]*>//g;s/and//g;s/://g;s/\.//g;s/,//g'
+fgrep "5864550728" amazon_reviews_us_Books_v1_02.tsv | awk 'BEGIN { FS = "\t" } ; { print $14 }' | sed -e 's/<[^>]*>//g;s/and//g;s/://g;s/\.//g;s/,//g' > modified_review_body_5864550728.txt
 ls
-head -n 1 0312864590.txt >> 0312864590.20221018_181131.txt
-ln -s 0312864590.20221018_181131.txt 0312864590.LATEST.txt
-vi update_symb_link.sh
-chmod u+rx update_symb_link.sh
-vi avg_rating.sh
-chmod u+rx avg_rating.sh
-crontab -e
-crontab -l
-ls
-date
-cat 0312864590.AVGRATING.txt 
-ls
-ls -l
-date
-ls -l
-exit
